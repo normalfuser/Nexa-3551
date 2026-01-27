@@ -22,9 +22,9 @@ app.use(async (c, next) => {
 
 await loadRoutes(path.join("src", "routes"), app);
 
-logger.backend("Nexa started on port 5353");
+logger.backend("Nexa started on port 3551");
 
 export default {
-  port: 5353,
+  port: 3551,
   fetch: app.fetch,
 }
