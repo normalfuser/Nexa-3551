@@ -23,8 +23,8 @@ export default function (app: Hono) {
                 hidden: false,
                 _type: "CommonUI Simple Message Base",
                 subgame: "br",
-                body: "Made by andr1ww \nDiscord: http://discord.gg/nexafn",
-                title: "Nexa",
+                body: "Credits: @andr1ww \nRunning on port: 3551 \n A fork of Nexa backend with some fixes -ducki67",
+                title: "Nexa fork!",
                 spotlight: false,
               },
             ],
@@ -51,8 +51,8 @@ export default function (app: Hono) {
               {
                 hidden: false,
                 _type: "CommonUI Emergency Notice Base",
-                title: "Nexa",
-                body: "Made by andr1ww \nDiscord: http://discord.gg/nexafn",
+                body: "Credits: @andr1ww \nRunning on port: 3551 \n A fork of Nexa backend with some fixes -ducki67",
+                title: "Nexa fork!",
               },
             ],
           },
@@ -381,8 +381,8 @@ export default function (app: Hono) {
               ],
               _type: "FullScreenBackground",
             },
-            FullScreenBody: "Made by andr1ww\nDiscord: https://discord.gg/idk",
-            FullScreenTitle: "Nexa",
+            FullScreenBody: "Credits: @andr1ww \nRunning on port: 3551 \n A fork of Nexa backend with some fixes -ducki67",
+            FullScreenTitle: "Nexa fork!",
             TeaserBackground: {
               Image: [
                 {

@@ -26,6 +26,8 @@ await loadRoutes(path.join("src", "routes"), app);
 
 logger.backend(`Nexa started on port ${PortConfig}`);
 
+/* Log configs here soon  from Config.ini */
+
 export default {
   port: PortConfig,
   fetch: app.fetch,
