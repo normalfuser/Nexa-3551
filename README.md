@@ -29,7 +29,9 @@ bun run src/index.ts
 ```
 
 ## Some added stuff
-**uhm later**
+- Port set to 3551\
+- Fixes added such as Shogun knock back\
+- ig thats all i think  not so much to add
 
 # Used API's
 
