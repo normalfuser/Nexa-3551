@@ -5,6 +5,8 @@ import { Nexa } from "./utils/handlers/errors";
 import logger from "./utils/logger/logger";
 import { cors } from "hono/cors";
 
+const PortConfig = (3551);
+
 const app = new Hono({ strict: false });
 
 app.use("*", cors());
@@ -22,9 +24,9 @@ app.use(async (c, next) => {
 
 await loadRoutes(path.join("src", "routes"), app);
 
-logger.backend("Nexa started on port 3551");
+logger.backend(`Nexa started on port ${PortConfig}`);
 
 export default {
-  port: 3551,
+  port: PortConfig,
   fetch: app.fetch,
 }
