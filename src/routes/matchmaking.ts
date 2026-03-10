@@ -89,4 +89,17 @@ export default function (app: Hono) {
   app.post("/fortnite/api/matchmaking/session/:SessionId/join", async (c) => {
     return c.json([]);
   });
+
+  // Account session encryption key
+  app.get("/fortnite/api/game/v2/matchmaking/account/:accountId/session/:sessionId", async (c) => {
+    return c.json({
+      accountId: c.req.param("accountId"),
+      sessionId: c.req.param("sessionId"),
+      key: "AOJEv8uTFmUh7XM2328kq9rlAzeQ5xzWzPIiyKn2s7s=",
+    });
+  });
+
+  app.post("/fortnite/api/matchmaking/session/matchMakingRequest", async (c) => {
+    return c.json([]);
+  });
 }
