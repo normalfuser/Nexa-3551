@@ -41,6 +41,9 @@ app.use(async (c, next) => {
 
 await loadRoutes(path.join("src", "routes"), app);
 
+// Start the matchmaker WebSocket server
+import("./matchmaker");
+
 logger.backend(`Nexa started on port ${PortConfig}`);
 logger.backend(`Listening on ${HostConfig}:${PortConfig}`);
 logger.backend(`LAN IP: ${LanIP}`);
