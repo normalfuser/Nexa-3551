@@ -4,6 +4,10 @@ import getVersion from "../utils/handlers/getVersion";
 import type { Hono } from "hono";
 import { v4 as uuidv4 } from "uuid";
 
+// Store the buildUniqueId from the last matchmaking ticket request
+// This is used by the session endpoint to return the correct build version
+let currentBuildUniqueId = "0";
+
 export default function (app: Hono) {
   app.get("/waitingroom/api/waitingroom", async (c) => {
     return c.json([]);
@@ -18,6 +22,9 @@ export default function (app: Hono) {
     const playerPlaylist = bucketId.split(":")[3];
     const playerRegion = bucketId.split(":")[2];
     const ver = getVersion(c);
+
+    // Save the buildUniqueId from the bucketId for use in the session endpoint
+    currentBuildUniqueId = bucketId.split(":")[0];
 
     const mmData = jwt.sign(
       {
@@ -80,14 +87,15 @@ export default function (app: Hono) {
       usesPresence: false,
       allowJoinViaPresence: true,
       allowJoinViaPresenceFriendsOnly: false,
-      buildUniqueId: "0",
+      buildUniqueId: currentBuildUniqueId,
       lastUpdated: new Date().toISOString(),
       started: false,
     });
   });
 
+  // Join session - must return 204 No Content (not JSON)
   app.post("/fortnite/api/matchmaking/session/:SessionId/join", async (c) => {
-    return c.json([]);
+    return new Response(null, { status: 204 });
   });
 
   // Account session encryption key
